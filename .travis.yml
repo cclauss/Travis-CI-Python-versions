@@ -11,6 +11,7 @@ which-steps: &which-steps
 
 trusty-steps: &trusty-steps
   os: linux
+  dist: trusty
   <<: *which-steps
 
 xenial-steps: &xenial-steps
