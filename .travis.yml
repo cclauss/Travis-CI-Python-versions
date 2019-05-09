@@ -137,28 +137,28 @@ matrix:
       python: 2.7
       <<: *windows-steps
       install:
-        - choco install python2
+        - choco install python2 --params "PrependPath=1"
       env: PATH=/c/Python27:/c/Python27/Scripts:$PATH
     - name: "Python 3.5 on Windows"
       python: 3.5
       <<: *windows-steps
       install:
-        - choco install python --version 3.5.4
+        - choco install python --version 3.5.4 --params "PrependPath=1"
       env: PATH=/c/Python35:/c/Python35/Scripts:$PATH
     - name: "Python 3.6 on Windows"
       python: 3.6
       <<: *windows-steps
       install:
-        - choco install python --version 3.6.8
+        - choco install python --version 3.6.8 --params "PrependPath=1"
       env: PATH=/c/Python36:/c/Python36/Scripts:$PATH
     - name: "Python 3.7 on Windows"
       python: 3.7
       <<: *windows-steps
       install:
         - ls /c/Python37 || true
-        - choco install python
+        - choco install python --params "PrependPath=1"
         - ls /c/Python37 || true
-      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+      #env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
 
 before_script: python -m pip install --upgrade pip
 script:
