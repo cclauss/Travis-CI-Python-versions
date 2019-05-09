@@ -157,6 +157,7 @@ matrix:
       install:
         - ls /c/Python37 || true
         - choco install python --params "PrependPath=1"
+        - export PATH
         - ls /c/Python37 || true
       #env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
 
